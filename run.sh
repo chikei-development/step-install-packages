@@ -8,7 +8,7 @@ echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 uname -a
 cat /etc/issue.net
 echo "----------------------------------------------------------------------------------------------------"
-uamecat <<EOF | sudo tee /etc/apt/sources.list
+cat <<EOF | sudo tee /etc/apt/sources.list
 deb http://ftp.jp.debian.org/debian/ jessie main
 #deb-src http://ftp.jp.debian.org/debian/ jessie main
 deb http://security.debian.org/ jessie/updates main
