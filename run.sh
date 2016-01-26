@@ -4,7 +4,7 @@ sudo rm -fr /var/lib/apt/lists
 sudo ln -s $APT_LIST_PATH/ /var/lib/apt/lists
 
 #sudo sed -ie 's/httpredir.debian.org/ftp.debian.org/' /etc/apt/sources.list
-sudo sh -c 'cat <<EOF > /etc/apt/sources.list'
+cat <<EOF | sudo tee /etc/apt/sources.list
 deb http://ftp.jp.debian.org/debian/ jessie main
 deb-src http://ftp.jp.debian.org/debian/ jessie main
 deb http://security.debian.org/ jessie/updates main
