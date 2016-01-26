@@ -4,7 +4,11 @@ sudo rm -fr /var/lib/apt/lists
 sudo ln -s $APT_LIST_PATH/ /var/lib/apt/lists
 
 #sudo sed -ie 's/httpredir.debian.org/ftp.debian.org/' /etc/apt/sources.list
-cat <<EOF | sudo tee /etc/apt/sources.list
+echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+uname -a
+cat /etc/issue.net
+echo "----------------------------------------------------------------------------------------------------"
+uamecat <<EOF | sudo tee /etc/apt/sources.list
 deb http://ftp.jp.debian.org/debian/ jessie main
 #deb-src http://ftp.jp.debian.org/debian/ jessie main
 deb http://security.debian.org/ jessie/updates main
@@ -12,7 +16,7 @@ deb http://security.debian.org/ jessie/updates main
 deb http://ftp.jp.debian.org/debian/ jessie-updates main
 #deb-src http://ftp.jp.debian.org/debian/ jessie-updates main
 EOF
-
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 
 sudo apt-get update -y
 if [ $( find $WERCKER_CACHE_DIR/wercker/aptupdated -mtime -1 | wc -l ) -eq 0 ]
