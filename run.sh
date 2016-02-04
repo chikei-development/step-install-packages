@@ -5,7 +5,7 @@ sudo ln -s $APT_LIST_PATH/ /var/lib/apt/lists
 
 if [ -n "$WERCKER_INSTALL_PACKAGES_DISABLE_SECURITY" ]
 then
-    sudo sed -iE "s/^(.+security\..+)$/#\1/i" /etc/apt/sources.list
+    sudo sed -i -r "s/^(.+security\..+)$/#\1/i" /etc/apt/sources.list
     sudo apt-get update -y
 fi
 
